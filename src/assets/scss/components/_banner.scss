@@ -1,0 +1,106 @@
+.banner {
+  position: relative;
+  color: $white;
+  background-color: $blue;
+  overflow: hidden;
+
+  @include r(768) {
+    background-image: url('../img/banner__mobile-bg.jpg');
+    @include cv;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @include r(768) {
+      max-width: 290px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__description {
+    line-height: 1.6;
+
+    @include r(768) {
+      font-size: 13px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 50px;
+
+    @include rmin(1200) {
+      & > .button:first-child {
+        margin-right: 26px;
+      }
+    }
+
+    @include r(768) {
+      margin-top: 30px;
+    }
+
+    @include r(453) {
+      flex-direction: column;
+      margin-top: 20px;
+
+      & > .button {
+        width: 100%;
+
+        &:first-child {
+          margin-bottom: 14px;
+        }
+      }
+    }
+
+  }
+
+  &__video {
+    position: absolute;
+    width: 210%;
+    height: 130%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @include r(768) {
+      //transform: translate(-50%, -50%) rotate(90deg);
+      display: none;
+    }
+  }
+
+  &__overlay {
+    @include ovl;
+    background-color: #0038A4;
+    opacity: .8;
+
+    @include r(768) {
+      display: none;
+    }
+  }
+
+  & > .container {
+    position: relative;
+  }
+
+  &__in {
+    @include r(1200) {
+      padding: 40px 0;
+    }
+
+    @include r(768) {
+      text-align: center;
+      padding: 20px 0 40px;
+    }
+  }
+
+  &__image {
+    @include r(1200) {
+      max-height: 350px;
+    }
+
+    @include r(768) {
+      max-width: 310px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.feed {
+  margin-top: -80px;
+
+  &__wrapper {
+    background-image: url('../img/feed__bg.jpg');
+
+    @include r(992) {
+      background-size: 770px;
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 60px;
+
+    @include r(768) {
+      margin-bottom: 30px;
+    }
+
+    @include r(576) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    align-items: flex-end;
+
+    @include r(992) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    @include r(576) {
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+  }
+
+  &__button {
+    @include r(576) {
+      margin-top: 20px;
+    }
+  }
+}

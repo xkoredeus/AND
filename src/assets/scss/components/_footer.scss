@@ -1,0 +1,132 @@
+.footer {
+  background-color: $white;
+  padding: 40px 0;
+
+  &__in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include r(1255) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info {
+    @include r(1255) {
+      order: 2
+    }
+
+    @include r(996) {
+      margin: 25px auto 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include r(768) {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    margin-right: 18px;
+    @include ease;
+
+    @include r(1400) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &-wrapper {
+      @include r(1255) {
+        order: 3;
+        margin: 30px auto 0;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    @include r(1255) {
+      order: 1;
+    }
+
+    @include r(996) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @include r(768) {
+      text-align: center;
+      flex-direction: column;
+    }
+
+    &-link {
+      font-size: 14px;
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+        margin-right: 24px;
+
+        @include r(1300) {
+          margin-right: 10px;
+        }
+
+        @include r(768) {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__tel {
+    position: relative;
+    font-family: $F-Heavy;
+    font-size: 19px;
+    margin-right: 56px;
+
+    @include r(1400) {
+      margin-right: 16px;
+    }
+
+    @include r(768) {
+      font-size: 28px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 37px;
+      right: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $dark;
+
+      @include r(1400) {
+        right: -16px;
+      }
+
+      @include r(768) {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    &:hover {
+      color: $blue;
+    }
+  }
+}

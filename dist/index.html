@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#0038A4">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <title>New Project</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+    <style>
+        .preloader__wrp {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            min-height: 300px;
+            width: 100vw;
+            background-color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            z-index: 100;
+        }
+    
+        .preloader {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 50px;
+            width: 50px;
+            margin: -25px 0 0 -25px;
+        }
+    
+        .preloader span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            /*background: rgba(0, 0, 0, 0.25);*/
+            border-radius: 50%;
+            background: #007aff;
+            -webkit-animation: preloader 1.7s infinite ease-in-out both;
+            animation: preloader 1.7s infinite ease-in-out both;
+            margin-right: 5px;
+        }
+    
+        .preloader span:nth-child(1) {
+            left: 0;
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+        }
+    
+        .preloader span:nth-child(2) {
+            left: 15px;
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
+    
+        .preloader span:nth-child(3) {
+            left: 30px;
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+    
+        .preloader span:nth-child(4) {
+            left: 45px;
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
+    
+        @-webkit-keyframes preloader {
+            0%, 80%, 100% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                transform: scale(0);
+                opacity: 0;
+            }
+            40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes preloader {
+            0%, 80%, 100% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                transform: scale(0);
+                opacity: 0;
+            }
+            40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <div class="preloader__wrp">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <section class="banner">
+            <video class="banner__video" autoplay loop>
+                <source src="assets/video/banner__bg.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            </video>
+            <div class="banner__overlay"></div>
+            <header class="header">
+                <div class="container container-wide">
+                    <div class="header__in">
+                        <a class="header__logo" href="#">
+                            <img class="img-responsive" src="assets/img/logo--white.png" alt="logo-white">
+                        </a>
+                        <nav class="header__nav">
+                            <a class="header__nav-link" href="#">Описание продукта</a>
+                            <a class="header__nav-link" href="#">Модели</a>
+                            <a class="header__nav-link" href="#">Кейсы</a>
+                            <a class="header__nav-link" href="#">Вопрос-ответ</a>
+                            <a class="header__nav-link" href="#">Документация</a>
+                            <a class="header__nav-link" href="#">Процесс заявки</a>
+                        </nav>
+                        <a class="header__tel" href="tel:74959373344">+7&nbsp;(495)&nbsp;937-33-44</a>
+                        <button class="header__button" data-fancybox data-src="#popup--call">
+                            <svg class="header__button-icon" width="25" height="25">
+                                <use xlink:href="#call"></use>
+                            </svg>
+                            <span class="header__button-text">Обратная<br class="d-none d-xl-inline"> связь</span>
+                        </button>
+                        <button class="header__hamb d-xl-none js-toggle-menu" type="button">
+                            <span class="header__hamb-icon header__hamb-icon--1">
+                                <svg width="28" height="13">
+                                    <use xlink:href="#hamburger"></use>
+                                </svg>
+                            </span>
+                            <span class="header__hamb-icon header__hamb-icon--2">
+                                <svg width="22" height="22">
+                                    <use xlink:href="#cross"></use>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <div class="banner__in">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-md-8">
+                            <div class="banner__title section__title">Система динамического контроля веса A&D</div>
+                            <div class="d-md-none">
+                                <img class="banner__image img-responsive" src="assets/img/banner__image.png" alt="banner__image">
+                            </div>
+                            <div class="banner__description">Контрольно-динамические весы (чеквейер) A&D – система непрерывного (динамического) взвешивания серии AD4961 предназначены для контроля веса продукции, движущейся по конвейеру и автоматической отбраковке упаковок с недовесом или перевесом от заданного весового диапазона. </div>
+                            <div class="banner__buttons">
+                                <a class="button button--tr" href="#">Подробное описание</a>
+                                <button class="button button--tr" data-fancybox data-src="#popup--call">Оформить</button>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-4 d-none d-md-block">
+                            <img class="banner__image img-responsive" src="assets/img/banner__image.png" alt="banner__image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="products">
+            <div class="container">
+                <div class="products__slider swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="products__slide swiper-slide">
+                            <div class="row no-gutters align-items-xl-end">
+                                <div class="col-xl-6 col-md-4">
+                                    <div class="products__title section__title">
+                                        Чеквейер серии <br>AD4961
+                                    </div>
+                                    <div class="products__image-wrapper">
+                                        <div class="products__slider-counter">
+                                            <div class="products__slider-counter--active js-products-step">01</div>
+                                            <div class="products__slider-counter--all js-products-length">04</div>
+                                        </div>
+        
+                                        <div class="products__thumbs-wrapper">
+                                            <div class="products__thumbs swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <div class="products__thumbs-slide swiper-slide">
+                                                        <img class="img-responsive" src="assets/img/product--1.png" alt="product">
+                                                    </div>
+                                                    <div class="products__thumbs-slide swiper-slide">
+                                                        <img class="img-responsive" src="assets/img/product--1.png" alt="product">
+                                                    </div>
+                                                    <div class="products__thumbs-slide swiper-slide">
+                                                        <img class="img-responsive" src="assets/img/product--1.png" alt="product">
+                                                    </div>
+                                                    <div class="products__thumbs-slide swiper-slide">
+                                                        <img class="img-responsive" src="assets/img/product--1.png" alt="product">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-md-8">
+                                    <div class="products__info">
+                                        <div class="products__slider swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide products__slide">
+                                                    <div class="products__slide-list">
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Точность взвешивания </div>
+                                                            <div class="products__slide-list-item-description">Дискретность от 0,01 до 0,1 г, повторяемость от 0,01 до 1,0 г. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Широкий выбор </div>
+                                                            <div class="products__slide-list-item-description">Предел взвешивания от 500 г до 2 кг, пропускная способность от 145 до 400 шт./мин., максимальные размеры продукта длина 22-450 мм, ширина 120-300 мм. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Удобство в эксплуатации </div>
+                                                            <div class="products__slide-list-item-description">7-ми дюймовая цветная сенсорная панель, внутренняя память на 1 000 позиций, небольшой вес, компактная конструкция, уникальный модульный дизайн </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Высокое качество </div>
+                                                            <div class="products__slide-list-item-description">Производство полностью в Японии, свидетельство об утверждении типа средств измерений, регистрационный номер № 79713-20 в Госреестр</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide products__slide">
+                                                    <div class="products__slide-list">
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Точность взвешивания </div>
+                                                            <div class="products__slide-list-item-description">Дискретность от 0,01 до 0,1 г, повторяемость от 0,01 до 1,0 г. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Широкий выбор </div>
+                                                            <div class="products__slide-list-item-description">Предел взвешивания от 500 г до 2 кг, пропускная способность от 145 до 400 шт./мин., максимальные размеры продукта длина 22-450 мм, ширина 120-300 мм. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Удобство в эксплуатации </div>
+                                                            <div class="products__slide-list-item-description">7-ми дюймовая цветная сенсорная панель, внутренняя память на 1 000 позиций, небольшой вес, компактная конструкция, уникальный модульный дизайн </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide products__slide">
+                                                    <div class="products__slide-list">
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Точность взвешивания </div>
+                                                            <div class="products__slide-list-item-description">Дискретность от 0,01 до 0,1 г, повторяемость от 0,01 до 1,0 г. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Широкий выбор </div>
+                                                            <div class="products__slide-list-item-description">Предел взвешивания от 500 г до 2 кг, пропускная способность от 145 до 400 шт./мин., максимальные размеры продукта длина 22-450 мм, ширина 120-300 мм. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Удобство в эксплуатации </div>
+                                                            <div class="products__slide-list-item-description">7-ми дюймовая цветная сенсорная панель, внутренняя память на 1 000 позиций, небольшой вес, компактная конструкция, уникальный модульный дизайн </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Высокое качество </div>
+                                                            <div class="products__slide-list-item-description">Производство полностью в Японии, свидетельство об утверждении типа средств измерений, регистрационный номер № 79713-20 в Госреестр</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide products__slide">
+                                                    <div class="products__slide-list">
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Точность взвешивания </div>
+                                                            <div class="products__slide-list-item-description">Дискретность от 0,01 до 0,1 г, повторяемость от 0,01 до 1,0 г. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Широкий выбор </div>
+                                                            <div class="products__slide-list-item-description">Предел взвешивания от 500 г до 2 кг, пропускная способность от 145 до 400 шт./мин., максимальные размеры продукта длина 22-450 мм, ширина 120-300 мм. </div>
+                                                        </div>
+                                                        <div class="products__slide-list-item">
+                                                            <div class="products__slide-list-item-title">Удобство в эксплуатации </div>
+                                                            <div class="products__slide-list-item-description">7-ми дюймовая цветная сенсорная панель, внутренняя память на 1 000 позиций, небольшой вес, компактная конструкция, уникальный модульный дизайн </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="products__navigation swiper-navigation">
+                        <button class="swiper-button-prev swiper-button--white">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--left"></use>
+                            </svg>
+                        </button>
+                        <button class="swiper-button-next swiper-button--white">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--right"></use>
+                            </svg>
+                        </button>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+        <section class="models section--inner">
+            <div class="container">
+                <div class="models__top d-flex justify-content-between flex-column flex-sm-row">
+                    <div class="models__title section__title">Модели</div>
+                    <div class="models__navigation swiper-navigation">
+                        <button class="swiper-button-prev">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--left"></use>
+                            </svg>
+                        </button>
+                        <button class="swiper-button-next">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="models__in">
+                    <div class="models__info">
+                        <div class="models__info-item">Название</div>
+                        <div class="models__info-item">Наибольший предел взвешивания</div>
+                        <div class="models__info-item">Дискретность</div>
+                        <div class="models__info-item">Повторяемость1</div>
+                        <div class="models__info-item">Максимальная пропускная способность</div>
+                    </div>
+                    <div class="models__slider-wrapper">
+                        <div class="models__slider swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                                <div class="models__slide swiper-slide">
+                                    <div class="models__slide-image" style="background-image: url('assets/img/models__image--1.png');"></div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Название</div>
+                                        <div class="models__slide-info">AD4961-600-1224 </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Наибольший предел взвешивания </div>
+                                        <div class="models__slide-info">600 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Дискретность </div>
+                                        <div class="models__slide-info">0,01 г</div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Повторяемость1 </div>
+                                        <div class="models__slide-info">0,01 г </div>
+                                    </div>
+                                    <div class="models__slide-row">
+                                        <div class="models__slide-title">Максимальная пропускная способность </div>
+                                        <div class="models__slide-info">400 шт./мин. </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+                </div>
+                <div class="d-flex justify-content-center mt-3 mt-xl-5">
+                    <a class="button models__button" href="#">Посмотреть еще</a>
+                </div>
+            </div>
+        </section>
+        <section class="cases">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5">
+                        <div class="cases__title section__title">Кейсы</div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="cases__slider-wrapper">
+                            <div class="cases__slider swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--1.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035 с отбраковщиком (2 комплекта) </div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--2.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035 с отбраковщиком (2 комплекта) </div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--3.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035 с отбраковщиком (2 комплекта) </div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--4.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035</div>
+                                                <div class="cases__slide-description">. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--5.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035</div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--6.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035</div>
+                                                <div class="cases__slide-description">. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--7.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035 с отбраковщиком (2 комплекта) </div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--8.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035 с отбраковщиком (2 комплекта) </div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                    <div class="cases__slide swiper-slide">
+                                        <div class="cases__slide-in">
+                                            <div class="cases__slide-image" style="background-image: url(assets/img/cases__img--9.png);"></div>
+                                            <div class="cases__slide-info">
+                                                <div class="cases__slide-name">Балт-Фиш плюс </div>
+                                                <div class="cases__slide-title">Чеквейер AD4961-2KD-2035 с отбраковщиком (2 комплекта) </div>
+                                                <div class="cases__slide-description">Компания Балт-Фиш плюс хорошо известна своими рыбными консервами под маркой «Толстый боцман», «Фрегат», «Рыбный стандарт №1» и прочее ни только на территории Псковской области и всего Северо-западного федерального округа, но также продукцию данного предприятия можно увидеть в ведущих продуктовых сетевых магазинах Москвы, Московской области и в Приволжье России. С недавних пор строгий контроль по весу консервов со вкусным тунцом и рыбоовощных наборов обеспечивают два чеквейера с отбраковщиком японского производства A&D. Кроме того, дополнительно был поставлен комплект для жиро- и влагозащищенного применения – шовные и бесшовные ленты для эксплуатации в агрессивной среде (рыбий жир, соленая вода, постоянный уровень влажности выше 85%, реагенты) и керамические подшипники.</div>
+                                            </div>
+                                        </div>
+                                        <div class="cases__slide-picture" style="background-image: url(assets/img/cases__picture--1.jpg);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cases__navigation swiper-navigation">
+                                <button class="swiper-button-prev">
+                                    <svg width="13" height="25">
+                                        <use xlink:href="#chevron--left"></use>
+                                    </svg>
+                                </button>
+                                <button class="swiper-button-next">
+                                    <svg width="13" height="25">
+                                        <use xlink:href="#chevron--right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cases__bottom-wrapper">
+                    <div class="cases__bottom swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--1.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--2.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--3.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--4.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--5.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--6.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--7.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--8.png" alt="Case">
+                            </div>
+                            <div class="cases__bottom-slide swiper-slide">
+                                <img src="assets/img/cases__img--9.png" alt="Case">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="questions section--inner">
+            <div class="container">
+                <div class="questions__top d-flex justify-content-between">
+                    <div class="questions__title section__title">Вопросы и ответы</div>
+                    <div class="questions__navigation swiper-navigation">
+                        <button class="swiper-button-prev">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--left"></use>
+                            </svg>
+                        </button>
+                        <button class="swiper-button-next">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="questions__slider-wrapper">
+                    <div class="questions__slider swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="questions__slide swiper-slide">
+                                <div class="questions__item">
+                                    <div class="questions__item-top">
+                                        <div class="questions__item-title">Что такое контрольно-динамические весы или чеквейер?</div>
+                                        <button class="questions__item-button">
+                                            <svg width="17" height="11">
+                                                <use xlink:href="#chevron--bottom"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="questions__item-dropdown">
+                                        <div class="questions__item-list">
+                                            <div>Достигнуть максимальной производительности технологической линии.</div>
+                                            <div>Снизить общие производственные расходы.</div>
+                                            <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                            <div>Сохранять и анализировать учетные данные.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="questions__item">
+                                    <div class="questions__item-top">
+                                        <div class="questions__item-title">Каковы функции чеквейера?</div>
+                                        <button class="questions__item-button">
+                                            <svg width="17" height="11">
+                                                <use xlink:href="#chevron--bottom"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="questions__item-dropdown">
+                                        <div class="questions__item-list">
+                                            <div>Достигнуть максимальной производительности технологической линии.</div>
+                                            <div>Снизить общие производственные расходы.</div>
+                                            <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                            <div>Сохранять и анализировать учетные данные.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="questions__item">
+                                    <div class="questions__item-top">
+                                        <div class="questions__item-title">В чем уникальность? </div>
+                                        <button class="questions__item-button">
+                                            <svg width="17" height="11">
+                                                <use xlink:href="#chevron--bottom"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="questions__item-dropdown">
+                                        <div class="questions__item-list">
+                                            <div>Достигнуть максимальной производительности технологической линии.</div>
+                                            <div>Снизить общие производственные расходы.</div>
+                                            <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                            <div>Сохранять и анализировать учетные данные.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="questions__item">
+                                    <div class="questions__item-top">
+                                        <div class="questions__item-title">В чем польза производителям от использования чеквейера? </div>
+                                        <button class="questions__item-button">
+                                            <svg width="17" height="11">
+                                                <use xlink:href="#chevron--bottom"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="questions__item-dropdown">
+                                        <div class="questions__item-list">
+                                            <div>Достигнуть максимальной производительности технологической линии.</div>
+                                            <div>Снизить общие производственные расходы.</div>
+                                            <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                            <div>Сохранять и анализировать учетные данные.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="questions__slide swiper-slide">
+                                <div class="questions__item">
+                                    <div class="questions__item-top">
+                                            <div class="questions__item-title">В чем уникальность? </div>
+                                            <button class="questions__item-button">
+                                                <svg width="17" height="11">
+                                                    <use xlink:href="#chevron--bottom"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    <div class="questions__item-dropdown">
+                                            <div class="questions__item-list">
+                                                <div>Достигнуть максимальной производительности технологической линии.</div>
+                                                <div>Снизить общие производственные расходы.</div>
+                                                <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                                <div>Сохранять и анализировать учетные данные.</div>
+                                            </div>
+                                        </div>
+                                </div>
+                                 <div class="questions__item">
+                                    <div class="questions__item-top">
+                                        <div class="questions__item-title">Что такое контрольно-динамические весы или чеквейер?</div>
+                                        <button class="questions__item-button">
+                                            <svg width="17" height="11">
+                                                <use xlink:href="#chevron--bottom"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="questions__item-dropdown">
+                                        <div class="questions__item-list">
+                                            <div>Достигнуть максимальной производительности технологической линии.</div>
+                                            <div>Снизить общие производственные расходы.</div>
+                                            <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                            <div>Сохранять и анализировать учетные данные.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="questions__item">
+                                    <div class="questions__item-top">
+                                        <div class="questions__item-title">В чем польза производителям от использования чеквейера? </div>
+                                        <button class="questions__item-button">
+                                            <svg width="17" height="11">
+                                                <use xlink:href="#chevron--bottom"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="questions__item-dropdown">
+                                        <div class="questions__item-list">
+                                            <div>Достигнуть максимальной производительности технологической линии.</div>
+                                            <div>Снизить общие производственные расходы.</div>
+                                            <div>Исключить возврат товара от потребителя по несоответствию веса.</div>
+                                            <div>Сохранять и анализировать учетные данные.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questions__bottom-navigation swiper-navigation">
+                        <button class="swiper-button-prev">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--left"></use>
+                            </svg>
+                        </button>
+                        <button class="swiper-button-next">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+        <section class="documents section--inner">
+            <div class="container">
+                <div class="documents__top d-flex justify-content-between">
+                    <div class="documents__title section__title">Документация</div>
+                    <div class="documents__navigation swiper-navigation">
+                        <button class="swiper-button-prev">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--left"></use>
+                            </svg>
+                        </button>
+                        <button class="swiper-button-next">
+                            <svg width="13" height="25">
+                                <use xlink:href="#chevron--right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="documents__slider-wrapper">
+                    <div class="documents__slider swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="documents__slide swiper-slide">
+                                <div class="documents__slide-image" style="background-image: url('assets/img/document--1.jpg');">
+                                    <button class="documents__slide-button" data-fancybox data-src="assets/img/document--1.jpg">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#loupe"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="documents__slide-title">Методика поверки</div>
+                            </div>
+                            <div class="documents__slide swiper-slide">
+                                <div class="documents__slide-image" style="background-image: url('assets/img/document--2.jpg');">
+                                    <button class="documents__slide-button" data-fancybox data-src="assets/img/document--2.jpg">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#loupe"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="documents__slide-title">Описание типа средств измерений Беларусь</div>
+                            </div>
+                            <div class="documents__slide swiper-slide">
+                                <div class="documents__slide-image" style="background-image: url('assets/img/document--3.jpg');">
+                                    <button class="documents__slide-button" data-fancybox data-src="assets/img/document--3.jpg">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#loupe"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="documents__slide-title">Описание типа средств измерений РФ</div>
+                            </div>
+                            <div class="documents__slide swiper-slide">
+                                <div class="documents__slide-image" style="background-image: url('assets/img/document--1.jpg');">
+                                    <button class="documents__slide-button" data-fancybox data-src="assets/img/document--1.jpg">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#loupe"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="documents__slide-title">Методика поверки</div>
+                            </div>
+                            <div class="documents__slide swiper-slide">
+                                <div class="documents__slide-image" style="background-image: url('assets/img/document--2.jpg');">
+                                    <button class="documents__slide-button" data-fancybox data-src="assets/img/document--2.jpg">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#loupe"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="documents__slide-title">Описание типа средств измерений Беларусь</div>
+                            </div>
+                            <div class="documents__slide swiper-slide">
+                                <div class="documents__slide-image" style="background-image: url('assets/img/document--3.jpg');">
+                                    <button class="documents__slide-button" data-fancybox data-src="assets/img/document--3.jpg">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#loupe"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="documents__slide-title">Описание типа средств измерений РФ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="documents__bottom-navigation swiper-navigation">
+                    <button class="swiper-button-prev">
+                        <svg width="13" height="25">
+                            <use xlink:href="#chevron--left"></use>
+                        </svg>
+                    </button>
+                    <button class="swiper-button-next">
+                        <svg width="13" height="25">
+                            <use xlink:href="#chevron--right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="steps section--inner">
+            <div class="container">
+                <div class="steps__title section__title">Что будет после обращения</div>
+                <div class="row">
+                    <div class="col-xl-4 step__wrapper">
+                        <div class="step">
+                            <div class="step__top-wrapper">
+                                <div class="step__top">
+                                    <div class="step__top-circle">
+                                        <div class="step__top-icon-wrapper">
+                                            <svg class="step__top-icon" width="80" height="53">
+                                                <use xlink:href="#step__icon--1"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step__info">
+                                <div class="step__title">1. Наши специалисты изучат Ваш&nbsp;запрос</div>
+                                <div class="step__description">При необходимости свяжутся с вами для уточнения деталей или заполнения опросного листа (в зависимости от сложности отраслевого решения, которое Вам необходимо).</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 step__wrapper">
+                        <div class="step">
+                            <div class="step__top-wrapper">
+                                <div class="step__top">
+                                    <svg class="step__arrow" width="9" height="15" >
+                                        <use xlink:href="#steps__arrow"></use>
+                                    </svg>
+                                    <div class="step__top-circle">
+                                        <div class="step__top-icon-wrapper">
+                                            <svg class="step__top-icon" width="62" height="61">
+                                                <use xlink:href="#step__icon--2"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step__info">
+                                <div class="step__title">2. Расчет стоимости.</div>
+                                <div class="step__description">В течение всего нескольких часов будут произведены расчеты стоимости оборудования с учетом всех Ваших требований.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 step__wrapper">
+                        <div class="step">
+                            <div class="step__top-wrapper">
+                                <div class="step__top">
+                                    <svg class="step__arrow" width="9" height="15" >
+                                        <use xlink:href="#steps__arrow"></use>
+                                    </svg>
+                                    <div class="step__top-circle">
+                                        <div class="step__top-icon-wrapper">
+                                            <svg class="step__top-icon" width="56" height="46">
+                                                <use xlink:href="#step__icon--3"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step__info">
+                                <div class="step__title">3. Отправка коммерческого предложения.</div>
+                                <div class="step__description">Равным образом дальнейшее развитие различных форм деятельности влечет.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3 mt-xl-5">
+                    <button class="button steps__button" data-fancybox data-src="#popup--call">Заказать</button>
+                </div>
+            </div>
+        </section>
+        <section class="video section--inner">
+            <div class="container">
+                <button class="video__button" data-fancybox data-src="https://youtu.be/XPpTgCho5ZA">
+                    <span class="video__button-icon">
+                        <svg width="33" height="38">
+                            <use xlink:href="#play"></use>
+                        </svg>
+                    </span>
+                </button>
+                <div class="video__title section__title">Профессиональные решения из Японии в области измерительных технологи</div>
+                <div class="video__description">Компания A&D предлагает широкий спектр оборудования для нужд большинства отраслей промышленности и лабораторий</div>
+            </div>
+        </section>
+        <section class="feed__wrapper">
+            <section class="test">
+                <div class="container">
+                    <div class="test__in">
+                        <div class="test__item">
+                            <img src="assets/img/test__img--1.png" alt="Testimonial Image">
+                            <div class="test__item-title">26 лет на Российском рынке </div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--2.png" alt="Testimonial Image">
+                            <div class="test__item-title">Лидер в России по продажам аналитических весов и анализаторов влажности.</div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--3.png" alt="Testimonial Image">
+                            <div class="test__item-title">Официальный сервисный центр </div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--4.png" alt="Testimonial Image">
+                            <div class="test__item-title">Техническая консультация, пуско-наладочные работы по запуску оборудования, обучение сотрудников предприятий </div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--5.png" alt="Testimonial Image">
+                            <div class="test__item-title">Предпродажная подготовка каждого продукта </div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--6.png" alt="Testimonial Image">
+                            <div class="test__item-title">Товар всегда в наличии на складах в России </div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--7.png" alt="Testimonial Image">
+                            <div class="test__item-title">Расширенная гарантия 5 лет на многие продукты </div>
+                        </div>
+                        <div class="test__item">
+                            <img src="assets/img/test__img--8.png" alt="Testimonial Image">
+                            <div class="test__item-title">Сертификация по ГОСТ </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="feed section--inner">
+                <div class="container container-wide">
+                    <div class="feed__title section__title">Ждем Ваших обращений</div>
+                    <form class="feed__form">
+                        <input type="text" placeholder="Ваше имя">
+                        <input type="tel" placeholder="+7 ( ___ ) - ___ - __ - __">
+                        <input type="email" placeholder="Ваш e-mail">
+                        <button class="button feed__button">Оформить</button>
+                    </form>
+                </div>
+            </section>
+        </section>
+        <footer class="footer">
+            <div class="container container-wide">
+                <div class="footer__in">
+                    <div class="footer__logo-wrapper">
+                        <a class="footer__logo" href="#">
+                            <img src="assets/img/logo--black.png" alt="logo black">
+                        </a>
+                        <span>© 2020 “A&D”</span>
+                    </div>
+                    <nav class="footer__nav">
+                        <a class="footer__nav-link" href="#">Описание продукта</a>
+                        <a class="footer__nav-link" href="#">Модели</a>
+                        <a class="footer__nav-link" href="#">Кейсы</a>
+                        <a class="footer__nav-link" href="#">Вопрос-ответ</a>
+                        <a class="footer__nav-link" href="#">Документация</a>
+                        <a class="footer__nav-link" href="#">Процесс заявки</a>
+                    </nav>
+                    <div class="footer__info">
+                        <a class="footer__tel" href="tel:74959373344">+7 (495) 937-33-44</a>
+                        <button class="footer__button" data-fancybox data-src="#popup--call">Задать вопрос</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="popup--call" style="display: none">
+        <div class="popup__wrapper">
+            <div class="popup__container">
+                <div class="popup__title section__title">Заполните для оформления заказа</div>
+                <form class="popup__fields">
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="tel" placeholder="+7 ( ___ ) - ___ - __ - __">
+                    <input type="email" placeholder="Ваш e-mail">
+                    <button class="button">Оформить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <svg width="0" height="0" class="svg-sprite">
+        <symbol id="call" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1621 0.620262C15.3447 0.620262 18.397 1.8846 20.6474 4.13503C22.8978 6.38547 24.1621 9.43766 24.1621 12.6203C24.1621 15.8029 22.8978 18.8551 20.6474 21.1056C18.397 23.356 15.3447 24.6203 12.1621 24.6203C8.97951 24.6203 5.92726 23.356 3.67683 21.1056C1.42639 18.8551 0.162109 15.8029 0.162109 12.6203C0.162109 9.43766 1.42639 6.38547 3.67683 4.13503C5.92726 1.8846 8.97951 0.620262 12.1621 0.620262ZM8.16211 13.0203C8.67968 13.7051 9.25153 14.3472 9.87211 14.9403C10.4583 15.568 11.101 16.1404 11.7921 16.6503C14.0021 18.2203 16.1621 18.7303 17.1021 17.8003L17.9521 16.9503C18.1621 16.7103 17.8421 16.0403 17.2321 15.4303C16.6221 14.8203 15.9221 14.5003 15.7121 14.7103L14.9421 15.4803L14.9921 15.4303C14.4621 15.9603 13.4221 15.8003 12.3021 15.1603C11.7869 14.8356 11.3105 14.4531 10.8821 14.0203C10.4467 13.6137 10.0607 13.1573 9.73211 12.6603C9.04211 11.5103 8.88211 10.4503 9.41211 9.9103L9.36211 9.96029L10.1321 9.19027C10.3421 8.98027 10.0221 8.28031 9.41211 7.67031C8.80211 7.06031 8.10211 6.74028 7.89211 6.95028L7.04211 7.80032C6.08211 8.67032 6.61211 10.8103 8.16211 13.0203Z" />
+        </symbol>
+        <symbol id="chevron--left" viewBox="0 0 13 25" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.8301 0.665527L1 12.4796L11.8301 24.2937"/>
+        </symbol>
+        <symbol id="chevron--right" viewBox="0 0 13 25" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999969 1L11.8301 12.8141L0.999969 24.6282"/>
+        </symbol>
+        <symbol id="chevron--bottom" viewBox="0 0 17 11" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1.5L8.5 9L16 1.5" />
+        </symbol>
+        <symbol id="loupe" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.3452 23.324C25.6444 20.9784 27.0621 17.7655 27.0621 14.2215C27.0621 7.03947 21.2399 1.21729 14.0579 1.21729C6.87589 1.21729 1.05371 7.03947 1.05371 14.2215C1.05371 21.4035 6.87589 27.2257 14.0579 27.2257C17.6959 27.2257 20.985 25.7318 23.3452 23.324ZM23.3452 23.324L30.6336 30.6125M14.0788 9.24167V14.1208M14.0788 14.1208V19M14.0788 14.1208H9.1996M14.0788 14.1208H18.958" stroke="white" stroke-width="2"/>
+        </symbol>
+        <symbol id="step__icon--1" viewBox="0 0 80 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#step-filter-1)">
+                <path d="M4.04199 48.3411C4.90287 47.8113 7.10146 46.7518 9.00879 46.7518C11.3929 46.7518 15.7635 46.8178 16.5582 46.0232C17.3528 45.2285 21.9221 43.904 20.8626 35.8912C18.1475 31.2558 14.704 22.5807 14.704 16.4884C14.704 10.396 18.6111 3.04541 27.4185 3.04541C36.2259 3.04541 40.1329 10.396 40.1329 16.4884C40.1329 22.5807 36.6894 31.2558 33.9743 35.8912C32.9148 43.904 37.4841 45.2285 38.2787 46.0232C39.0734 46.8178 43.444 46.7518 45.8281 46.7518C47.7355 46.7518 49.934 47.8113 50.7949 48.3411M50.1217 41.3215C50.7325 40.7106 54.2451 39.6924 53.4306 33.5327C51.3434 29.9693 48.6963 23.3005 48.6963 18.6172C48.6963 13.9338 51.6997 8.2832 58.4703 8.2832C65.2408 8.2832 68.2442 13.9338 68.2442 18.6172C68.2442 23.3005 65.5971 29.9693 63.51 33.5327C62.6955 39.6924 66.208 40.7106 66.8189 41.3215C67.4297 41.9323 70.7895 41.8816 72.6223 41.8816C74.0885 41.8816 75.7786 42.6961 76.4404 43.1033" stroke="#B5B5B5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+                <filter id="step-filter-1" x="0.541992" y="0.54541" width="79.3991" height="52.2961" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                    <feOffset dy="1"/>
+                    <feGaussianBlur stdDeviation="0.5"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+            </defs>
+        </symbol>
+    
+        <symbol id="step__icon--2" viewBox="0 0 62 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5645 2.91846V58.2466M5.5645 58.2466H57.0868M5.5645 58.2466H3.01367M57.0868 58.2466V2.91846M57.0868 58.2466H58.99M26.2861 14.0596H45.7041M20.085 30.3735H39.5029M20.085 30.3735C20.085 31.8517 18.8866 33.0498 17.4084 33.0498C15.9302 33.0498 14.7319 31.8515 14.7319 30.3733C14.7319 28.8951 15.9302 27.6968 17.4084 27.6968C18.8866 27.6968 20.085 28.8953 20.085 30.3735ZM20.085 46.6704H43.5116M20.085 46.6704C20.085 48.1486 18.8866 49.3467 17.4084 49.3467C15.9302 49.3467 14.7319 48.1484 14.7319 46.6702C14.7319 45.192 15.9302 43.9937 17.4084 43.9937C18.8866 43.9937 20.085 45.1922 20.085 46.6704ZM20.0845 14.0764C20.0845 15.5546 18.8862 16.7529 17.408 16.7529C15.9298 16.7529 14.7314 15.5546 14.7314 14.0764C14.7314 12.5982 15.9298 11.3999 17.408 11.3999C18.8862 11.3999 20.0845 12.5982 20.0845 14.0764ZM42.7305 30.3733C42.7305 31.8515 43.9288 33.0498 45.407 33.0498C46.8852 33.0498 48.0835 31.8515 48.0835 30.3733C48.0835 28.8951 46.8852 27.6968 45.407 27.6968C43.9288 27.6968 42.7305 28.8951 42.7305 30.3733ZM29.104 14.0764C29.104 15.5546 27.9057 16.7529 26.4275 16.7529C24.9493 16.7529 23.751 15.5546 23.751 14.0764C23.751 12.5982 24.9493 11.3999 26.4275 11.3999C27.9057 11.3999 29.104 12.5982 29.104 14.0764ZM33.7109 30.3733C33.7109 31.8515 34.9092 33.0498 36.3874 33.0498C37.8656 33.0498 39.064 31.8515 39.064 30.3733C39.064 28.8951 37.8656 27.6968 36.3874 27.6968C34.9092 27.6968 33.7109 28.8951 33.7109 30.3733ZM48.0835 14.0764C48.0835 15.5546 46.8852 16.7529 45.407 16.7529C43.9288 16.7529 42.7305 15.5546 42.7305 14.0764C42.7305 12.5982 43.9288 11.3999 45.407 11.3999C46.8852 11.3999 48.0835 12.5982 48.0835 14.0764ZM28.5552 46.6702C28.5552 48.1484 29.7535 49.3467 31.2317 49.3467C32.7099 49.3467 33.9082 48.1484 33.9082 46.6702C33.9082 45.192 32.7099 43.9937 31.2317 43.9937C29.7535 43.9937 28.5552 45.192 28.5552 46.6702ZM42.7295 46.6702C42.7295 48.1484 43.9278 49.3467 45.406 49.3467C46.8842 49.3467 48.0825 48.1484 48.0825 46.6702C48.0825 45.192 46.8842 43.9937 45.406 43.9937C43.9278 43.9937 42.7295 45.192 42.7295 46.6702Z" stroke="#B5B5B5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+    
+    
+        <symbol id="step__icon--3" viewBox="0 0 56 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#step-filter-2)">
+                <path d="M2.23831 40.791C0.938305 32.491 1.69664 20.9577 2.23831 16.2285C9.15496 21.4993 23.2133 32.191 24.1133 32.791C25.0133 33.391 27.0299 33.916 27.9258 34.1035V43.291C20.6258 43.291 9.30078 43.666 3.80078 42.291C8.05078 38.8952 16.4758 32.0035 16.1758 31.6035C15.8758 31.2035 15.2591 31.4368 14.9883 31.6035C12.4466 33.3952 6.3383 37.741 2.23831 40.791Z" fill="#B5B5B5"/>
+                <path d="M53.6133 40.791C54.9133 32.491 54.1549 20.9577 53.6133 16.2285C46.6966 21.4993 32.6383 32.191 31.7383 32.791C30.8383 33.391 28.8216 33.916 27.9258 34.1035V43.291C35.2258 43.291 46.5508 43.666 52.0508 42.291C47.8008 38.8952 39.3758 32.0035 39.6758 31.6035C39.9758 31.2035 40.5924 31.4368 40.8633 31.6035C43.4049 33.3952 49.5133 37.741 53.6133 40.791Z" fill="#B5B5B5"/>
+                <path d="M10.488 17.8536V19.4161L3.73828 14.166C9.48828 10.6035 21.4883 3.15358 23.4883 1.85358C25.4883 0.553582 27.3216 0.270249 27.9883 0.291082V12.7286H15.613C11.213 12.7286 10.363 16.1452 10.488 17.8536Z" fill="#B5B5B5"/>
+                <path d="M45.4886 17.8536V19.4161L52.2383 14.166C46.4883 10.6035 34.4883 3.15358 32.4883 1.85358C30.4883 0.553582 28.6549 0.270249 27.9883 0.291082V12.7286H40.3636C44.7636 12.7286 45.6136 16.1452 45.4886 17.8536Z" fill="#B5B5B5"/>
+                <path d="M20.1758 16.791C20.1758 16.3078 20.5675 15.916 21.0508 15.916H32.4258C32.909 15.916 33.3008 16.3078 33.3008 16.791C33.3008 17.2743 32.909 17.666 32.4258 17.666H21.0508C20.5675 17.666 20.1758 17.2743 20.1758 16.791Z" fill="#B5B5B5"/>
+                <path d="M20.1758 19.916C20.1758 19.4328 20.5675 19.041 21.0508 19.041H32.4258C32.909 19.041 33.3008 19.4328 33.3008 19.916C33.3008 20.3993 32.909 20.791 32.4258 20.791H21.0508C20.5675 20.791 20.1758 20.3993 20.1758 19.916Z" fill="#B5B5B5"/>
+                <path d="M20.1758 23.041C20.1758 22.5578 20.5675 22.166 21.0508 22.166H32.4258C32.909 22.166 33.3008 22.5578 33.3008 23.041C33.3008 23.5243 32.909 23.916 32.4258 23.916H21.0508C20.5675 23.916 20.1758 23.5243 20.1758 23.041Z" fill="#B5B5B5"/>
+                <path d="M20.1758 26.166C20.1758 25.6828 20.5675 25.291 21.0508 25.291H32.4258C32.909 25.291 33.3008 25.6828 33.3008 26.166C33.3008 26.6493 32.909 27.041 32.4258 27.041H21.0508C20.5675 27.041 20.1758 26.6493 20.1758 26.166Z" fill="#B5B5B5"/>
+            </g>
+            <defs>
+                <filter id="step-filter-2" x="0.520508" y="0.290039" width="54.8105" height="45.0477" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                    <feOffset dy="1"/>
+                    <feGaussianBlur stdDeviation="0.5"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+            </defs>
+        </symbol>
+    
+        <symbol id="steps__arrow" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7.5 7.5L1 14" stroke="#8D8D8D" stroke-dasharray="4 4"/>
+        </symbol>
+    
+        <symbol id="play" viewBox="0 0 33 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.9611 17.1253C33.3048 17.8931 33.3048 19.8305 31.9611 20.5983L2.99228 37.1519C1.65896 37.9138 -1.66494e-06 36.9511 -1.59781e-06 35.4155L-1.50645e-07 2.30817C-8.35199e-08 0.772527 1.65897 -0.190205 2.99228 0.571688L31.9611 17.1253Z" fill="white"/>
+        </symbol>
+    
+        <symbol id="hamburger" viewBox="0 0 28 13" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H28V3H0V0Z" />
+            <path d="M0 10H28V13H0V10Z" />
+        </symbol>
+        <symbol id="cross" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.16136 0L21.9603 19.799L19.839 21.9203L0.0400391 2.12132L2.16136 0Z" />
+            <path d="M19.8395 1.14441e-05L0.0404704 19.799L2.16179 21.9203L21.9608 2.12133L19.8395 1.14441e-05Z" />
+        </symbol>
+    
+    
+    </svg>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+.steps {
+  position: relative;
+  background-image: url('../img/steps__bg.jpg');
+  @include cv;
+
+  @include r(1200) {
+    background-image: none;
+    background-color: #f0f0f0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 330px;
+      left: 0;
+      right: 0;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      top: 0;
+      background-image: url(../img/steps__mobile-decoration--1.jpg);
+      background-position: 100% 0;
+      background-size: 350px;
+    }
+
+    &::after {
+      bottom: 0;
+      background-image: url(../img/steps__mobile-decoration--2.jpg);
+      background-position: 100% 100%;
+      background-size: 380px;
+    }
+  }
+
+  & > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @include r(1200) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    @include r(1200) {
+      margin-top: 25px;
+    }
+
+    @include r(576) {
+      width: 100%;
+    }
+  }
+}
+
+.step {
+  position: relative;
+  margin: auto;
+
+  &__wrapper {
+    &:not(:last-child) {
+      @include r(1200) {
+        margin-bottom: 30px;
+
+        .step {
+          &::before {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: calc(100% - 147px);
+            left: 0;
+            top: 142px;
+            bottom: 1px;
+            border: 1px dashed #B5B5B5;
+            opacity: 0.6;
+            z-index: 1;
+          }
+        }
+      }
+
+      @include rmin(1200) {
+        .step__top-wrapper {
+          &::before {
+            position: absolute;
+            content: '';
+            width: calc(100% - 117px);
+            height: 1px;
+            left: 146px;
+            bottom: 1px;
+            border: 1px dashed #B5B5B5;
+            opacity: 0.6;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      .step__top-wrapper {
+        @include r(1360) {
+          &::after {
+            position: absolute;
+            content: '';
+            width: 124px;
+            height: 20px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f0f0f0;
+            z-index: 2;
+          }
+        }
+
+        @include r(1200) {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__top {
+    position: relative;
+    width: 244px;
+    height: 244px;
+    border-radius: 50%;
+    border: 1px dashed #B5B5B5;
+    @include flex-center;
+    margin-bottom: 20px;
+    z-index: 3;
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &-circle {
+      width: 223px;
+      height: 223px;
+      background-color: $white;
+      border-radius: 50%;
+      @include ease;
+      @include flex-center
+    }
+
+    &-icon-wrapper {
+      width: 103px;
+      height: 103px;
+      border-radius: 50%;
+      border: 5px solid #B5B5B5;
+
+      @include flex-center;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    left: -7px;
+    bottom: -6px;
+
+    @include r(1200) {
+      left: -4px;
+      top: -42px;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__info {
+    max-width: 375px;
+
+    @include r(1200) {
+      max-width: unset;
+      padding-left: 20px;
+    }
+  }
+
+  &__title {
+    font-family: $F-Demi;
+    font-size: 23px;
+    margin-bottom: 15px;
+    min-height: 65px;
+
+    @include r(1200) {
+      font-size: 18px;
+      min-height: unset;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    .step__top-circle {
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

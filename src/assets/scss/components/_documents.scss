@@ -1,0 +1,89 @@
+.documents {
+  background-image: url('../img/documents__bg.jpg');
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include r(768) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__slider-wrapper {
+    max-width: 1100px;
+    margin-left: auto;
+  }
+
+  &__slide {
+    max-width: 375px;
+
+    @include r(1200) {
+      max-width: unset;
+    }
+
+    &-image {
+      position: relative;
+      min-height: 490px;
+      margin-bottom: 15px;
+      margin-top: 15px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+      @include cv;
+      @include ease;
+
+      @include r(1200) {
+        min-height: 370px;
+      }
+
+      @include r(576) {
+        max-width: 270px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &-button {
+      position: absolute;
+      right: 2px;
+      bottom: 2px;
+      width: 78px;
+      height: 78px;
+      background-color: #0066b366;
+      @include flex-center;
+      @include ease;
+
+      &:hover {
+        background-color: $blue;
+      }
+    }
+
+    &-title {
+      font-family: $F-Book;
+      
+      @include r(576) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__navigation {
+    @include r(768) {
+      display: none;
+    }
+  }
+
+  &__bottom-navigation {
+    margin-top: 30px;
+    @include rmin(768) {
+      display: none;
+    }
+
+    & > button {
+      margin: 0;
+    }
+  }
+}
