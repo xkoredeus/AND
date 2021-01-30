@@ -12,7 +12,7 @@
     &::before {
       @include ovl;
       height: 380px;
-      background-color: #305DB4;
+      background-color: #0660ab;
       opacity: 0;
       visibility: hidden;
       @include ease;
@@ -197,7 +197,7 @@
 body.show-menu {
   .header {
     &::before {
-      opacity: .9;
+      opacity: .96;
       visibility: visible;
     }
 

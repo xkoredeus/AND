@@ -164,14 +164,14 @@ $(() => {
 $(() => {
     const questionsSlider = new Swiper('.questions__slider', {
       slidesPerView: 1,
-      spaceBetween: 15,
+      spaceBetween: 35,
       loop: true,
-      effect: 'cube',
+      // effect: 'cube',
       allowTouchMove: false,
       speed: 600,
-      cubeEffect: {
-        shadow: false,
-      },
+      // cubeEffect: {
+      //   shadow: false,
+      // },
       breakpoints: {
         0: {
           navigation: {
@@ -231,12 +231,12 @@ $(() => {
 
 
 $(() => {
-    $('.questions__item').on('click', function () {
-      if($(this).hasClass('active')){
-        $(this).removeClass('active').find('.questions__item-dropdown').slideUp();
+    $('.questions__item-top').on('click', function () {
+      if($(this).parent('.questions__item').hasClass('active')){
+        $(this).parent('.questions__item').removeClass('active').find('.questions__item-dropdown').slideUp();
       } else {
-        $('.questions__item').removeClass('active').find('.questions__item-dropdown').slideUp();
-        $(this).toggleClass('active').find('.questions__item-dropdown').slideToggle()
+        $('.questions__item').parent('.questions__item').removeClass('active').find('.questions__item-dropdown').slideUp();
+        $(this).parent('.questions__item').toggleClass('active').find('.questions__item-dropdown').slideToggle()
       }
     })
 });
@@ -256,5 +256,17 @@ $(() => {
         $('body').hasClass('show-menu')) {
       $('body').removeClass('show-menu');
     }
+  });
+});
+
+
+$(() => {
+  $('.js-anchor-link').on('click', function anchorLinkClick (event) {
+    event.preventDefault();
+    let id  = $(this).attr('href'),
+        top = $(id).offset().top;
+    console.log(top);
+    $('body,html').animate({scrollTop: top}, 800);
+    // $('.content').animate({scrollTop: top - 100}, 800);
   });
 });

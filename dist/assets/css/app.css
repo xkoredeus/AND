@@ -5965,7 +5965,7 @@ a:hover {
     left: 0;
     top: 0;
     height: 380px;
-    background-color: #305DB4;
+    background-color: #0660ab;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: .3s all ease;
@@ -6215,7 +6215,7 @@ a:hover {
 }
 
 body.show-menu .header::before {
-  opacity: .9;
+  opacity: .96;
   visibility: visible;
 }
 
@@ -7338,6 +7338,11 @@ body.show-menu .header__nav, body.show-menu .header__button {
 
 .questions__item.active .questions__item-button svg {
   stroke: #ffffff;
+}
+
+.questions__slide {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 @media only screen and (max-width: 768px) {

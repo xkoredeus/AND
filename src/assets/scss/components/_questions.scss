@@ -109,6 +109,11 @@
     }
   }
 
+  &__slide {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
   &__navigation {
     @include r(768) {
       display: none;
