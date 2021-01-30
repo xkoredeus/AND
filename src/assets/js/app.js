@@ -128,12 +128,12 @@ $(() => {
       slidesPerView: 1,
       spaceBetween: 35,
       loop: true,
-      // effect: 'cube',
       allowTouchMove: false,
       speed: 600,
-      // cubeEffect: {
-      //   shadow: false,
-      // },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       breakpoints: {
         0: {
           navigation: {
