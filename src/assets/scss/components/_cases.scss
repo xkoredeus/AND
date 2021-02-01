@@ -29,13 +29,17 @@
   &__slide {
     &-in {
       position: relative;
-      padding: 64px 35px 135px 25px;
-      display: grid;
-      grid-template-columns: 93px 1fr;
-      grid-column-gap: 20px;
+      padding: 64px 45px 135px 45px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background-color: $white;
       box-shadow: 20px 30px 30px rgba(0, 0, 0, 0.1);
       min-height: 633px;
+
+      @include r(1400) {
+        min-height: 663px;
+      }
 
       @include r(1200) {
         min-height: 313px;
@@ -44,32 +48,22 @@
 
       @include r(768) {
         min-height: unset;
-        grid-template-columns: 1fr;
-        grid-row-gap: 20px;
       }
     }
 
     &-image {
-      width: 100%;
+      width: 190px;
       height: 72px;
       @include ct;
-      grid-column: 1/2;
-
-      @include r(768) {
-        grid-column: 1/2;
-      }
+      background-position: 0 50%;
+      margin-bottom: 15px;
     }
 
     &-info {
-      grid-column: 2/3;
       @include ease;
       transition-delay: .5s;
       opacity: 0;
       transform: translateY(-5px);
-
-      @include r(768) {
-        grid-column: 1/2;
-      }
     }
 
     &-name,
@@ -99,6 +93,10 @@
       transform: translateX(30px);
       transition-delay: 0.8s;
       opacity: 0;
+
+      @include r(1400) {
+        width: 690px;
+      }
 
       @include r(1200) {
         top: calc(100% - 20px);

@@ -13,6 +13,10 @@
       display: flex;
       align-items: flex-start;
 
+      @include r(1400) {
+        top: 30px;
+      }
+
       @include r(1200) {
         top: 10px;
       }
@@ -63,7 +67,7 @@
       margin-left: -60px;
       max-width: 340px;
 
-      @include r(1200) {
+      @include r(1400) {
         margin-left: 0;
       }
     }
@@ -97,6 +101,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include r(1400) {
+      padding: 130px 25px 30px;
+    }
 
     @include r(1200) {
       padding: 60px 15px 20px;
@@ -132,6 +140,10 @@
     margin-bottom: 25px;
     box-shadow: -1px 6px 4px rgba(0, 0, 0, 0.1);
 
+    @include r(1400) {
+      padding: 25px 30px 130px 30px;
+    }
+
     @include r(768) {
       padding: 90px 15px 25px;
     }
@@ -150,6 +162,10 @@
       &-item {
         position: relative;
         padding-left: 85px;
+
+        @include r(1400) {
+          padding-left: 70px;
+        }
 
         @include r(1200) {
           padding-left: 45px;

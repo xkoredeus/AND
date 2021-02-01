@@ -3,6 +3,12 @@
   background-image: url('../img/steps__bg.jpg');
   @include cv;
 
+  @include rmin(1200) {
+    .row {
+      transform: translateX(55px);
+    }
+  }
+
   @include r(1200) {
     background-image: none;
     background-color: #f0f0f0;
@@ -77,6 +83,14 @@
             border: 1px dashed #B5B5B5;
             opacity: 0.6;
             z-index: 1;
+          }
+        }
+      }
+
+      @include rmin(1200) {
+        &:last-child {
+          .step__info {
+            max-width: 310px;
           }
         }
       }

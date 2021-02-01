@@ -165,7 +165,7 @@ $(() => {
     const questionsSlider = new Swiper('.questions__slider', {
       slidesPerView: 1,
       spaceBetween: 35,
-      loop: true,
+      loop: false,
       allowTouchMove: false,
       speed: 600,
       effect: 'fade',

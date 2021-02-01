@@ -47,6 +47,10 @@ a {
 .container {
   max-width: 1352px;
 
+  @include r(1450) {
+    max-width: 1140px;
+  }
+
   &-wide {
     max-width: 1624px;
   }
