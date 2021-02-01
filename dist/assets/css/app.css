@@ -7033,11 +7033,14 @@ body.show-menu .header__nav, body.show-menu .header__button {
 
 .cases {
   overflow: hidden;
-  background-image: url("../img/cases__bg.jpg");
-  background-size: 100%;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  padding-bottom: 50px;
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .cases {
+    padding: 30px 0;
+  }
 }
 
 .cases__slider {
@@ -7048,6 +7051,12 @@ body.show-menu .header__nav, body.show-menu .header__button {
   position: relative;
   background-color: #ffffff;
   margin-bottom: 180px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .cases__slider-wrapper {
+    margin-bottom: 130px;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
